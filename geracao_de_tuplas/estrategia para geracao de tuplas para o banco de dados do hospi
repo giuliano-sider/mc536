@@ -1,0 +1,137 @@
+# geracao de tuplas para o banco de dados do hospital
+
+- Pessoa (7600)
+	- CPF --> sample [1, 1e9] uniform, unique.
+	- nome --> sample from firstname, lastname list (mix & match)
+	- endereco --> sample from "Rua" <random word>, <random number>
+	- telefone --> sample from random area code, random number 8 digits
+	- data_nascimento --> random 4 digit year, month, day
+
+- Paciente (7000)
+	- CPF --> sample from Pessoa.CPF, unique
+	- tipo sanguíneo --> sample from {null,{AB,B,A}{+,-}}
+	- plano de saude --> sample from a list including null and a bunch of options (manually crafted)
+
+- Departamento (9)
+	- nome (manually crafted)
+	- funcao (manually crafted)
+	- CPF gerente --> 9 sampled from funcionário, unique
+
+- Funcionário (600)
+	- CPF --> randomly sampled from Pessoa.CPF, unique
+	- salário --> random [1000, 20000],[00, 99] reais
+	- data_contratacao --> random data between data_nascimento and today's date
+	- data_demissao --> 100 % of null
+	- formacao --> drawn from some list 
+	- nome_departamento --> sample from departamento nome
+
+- Tecnico (148)
+	- CPF --> randomly drawn from funcionário, unique
+
+- Medico (140)
+	- CPF --> randomly sampled from Funcionário.CPF, unique
+	- CRM --> randomly sampled from [1, 1e8]
+	- especialidade --> randomly sampled from some manually crafted list
+
+- Enfermeiro (156)
+	- CPF --> randomly sampled from Funcionario
+	- especialidade --> sampled from some manually crafted list
+
+- Gerente (13)
+	- CPF --> randomly sampled from Funcionario
+	- nome_departamento_gerenciado --> null or urgghh this is redundant
+
+- Tratamento (8329)
+	- nome --> sampled from some insane list
+	- duracao --> some interval string <random number> {days,weeks,months,years}
+	- custo --> [1, 1e9],[00, 99] reais
+
+- Contra indicação (5)
+	- nome --> sampled from some list
+
+- Efeito colateral (10)
+	- nome_tratamento --> randomly sample from tratamento.nome
+	- nome_contra_indicacao --> randomly sample from contra_indicacao.nome
+
+- Medicamento (8329)
+	- nome --> same tratamento.nome in our case
+	- formula --> sample from some crazy list
+	- dose --> <random number> {comprimidos/drágueas/mL}, <random number> vezes ao dia
+	- registro_governo --> [1, 100000] random (not unique!!)
+
+- terapia (0)
+	- nome --> yoga, radioterapia tipo gama
+	- tipo --> meditacao e leve atividade corporal, radioterapia
+
+- Doenca
+	- nome_cientifico --> random sample (unique) from some list
+	- nome_popular --> sample from list? (but can be null)
+	- tipo --> sample from disease type list
+	- descricao --> blah blah (can be null)
+
+- tratamento_trata_doenca (1375)
+	- nome_tratamento --> sample randomly from tratamento.nome
+	- nome_cientifico_doenca --> sample randomly from doenca.nome_cientifico
+
+- sintoma (81)
+	- nome_cientifico --> sample from some fun list of symptoms
+	- nome_popular --> blahblah (can be null)
+	- tipo --> sample from some list (can be null)
+	- descricao --> describe, describe...
+
+- doenca_exibe_sintoma (566)
+	- nome_cientifico_doenca --> sample randomly from doenca.nome_cientifico
+	- nome_cientifico_sintoma --> sample randomly from sintoma.nome_cientifico
+
+- exame (6)
+	- tipo (oh come on, manual insetion)
+
+- equipamento (100)
+	- numero de patrimonio --> random number [1, 1e6]
+	- tipo --> some list
+
+- tecnico administra exame (148)
+	- cpf tecnico --> random sample from tecnico.cpf
+	- tipo_exame --> random sample from exame.tipo
+
+- tecnico opera equipamento (148)
+	- cpf tecnico --> sample randomly from tecnico.cpf
+	- numero_equipamento --> sample randomly from equipamento.numero_patrimonio
+
+- medico interna paciente (6617)
+	- paciente cpf --> randomly sample from paciente.cpf
+	- data_horario_admissao --> random date from data_nascimento of paciente to today
+	- medico_cpf --> random sample from medico.cpf
+	- data_horario_saida --> 20% null, 80% random date between data horario admissao and today
+	- leito --> random integer [1, 1000]
+
+- analise laboratorial (2820)
+	- cpf paciente --> random paciente.cpf
+	- data_horario_exame --> some random date
+	- tipo_exame --> random from exame.tipo
+	- resultado --> random from some enumeration?
+	- laboratorio --> random [1,100]
+	- cpf_tecnico_responsavel --> random from tecnico.cpf
+
+- caso (4574)
+	- cpf paciente --> random from paciente.cpf
+	- nome_cientifico_doenca --> random from doenca.nome_cientifico
+	- data_horario_diagnostico --> random date from paciente.data_nascimento to today
+	- status --> from some list
+	- prognostico --> sample from a list
+
+- consulta (6685)
+	- cpf paciente --> randomly sample from paciente.cpf
+	- data_horario --> random date from paciente.data_nascimento to today
+	- cpf_medico --> random date from medico.data_contratacao to today
+	- sala --> random from [1, 10000]
+
+- receita (9301)
+	- paciente cpf e data horario consulta sampled from consulta(cpf_paciente, data_horario)
+	- nome_tratamento sampled from tratamento.nome
+	(the combination of the 3 of them must be unique)
+
+- ficha de anamnese (6685)
+	- cpf paciente, data horario consulta sampled from consulta. ...
+	- tipo --> sampled from some list
+	- conteudo --> sampled from some list

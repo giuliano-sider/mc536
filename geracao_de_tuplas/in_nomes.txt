@@ -1,0 +1,172 @@
+100
+Miguel
+Davi
+Arthur
+Pedro
+Gabriel
+Bernardo
+Lucas
+Matheus
+Rafael
+Heitor
+Enzo
+Guilherme
+Nicolas
+Lorenzo
+Gustavo
+Felipe
+Samuel
+João
+Daniel
+Vitor
+Leonardo
+Henrique
+Theo
+Murilo
+Eduardo
+Pedro
+Pietro
+Cauã
+Isaac
+Caio
+Vinicius
+Benjamin
+João
+Lucca
+Miguel
+Bryan
+Joaquim
+Vitor
+Thiago
+Antônio
+Davi
+Francisco
+Gabriel
+Bruno
+Emanuel
+Ian
+Luiz
+Rodrigo
+Otávio
+Sophia
+Alice
+Julia
+Isabella
+Manuela
+Laura
+Luiza
+Valentina
+Giovanna
+Eduarda
+Helena
+Beatriz
+Luiza
+Lara
+Mariana
+Nicole
+Rafaela
+Heloísa
+Isadora
+Lívia
+Clara
+Lorena
+Gabriela
+Yasmin
+Isabelly
+Sarah
+Julia
+Letícia
+Luiza
+Melissa
+Marina
+Clara
+Cecília
+Esther
+Emanuelly
+Rebeca
+Ana
+Lavínia
+Vitória
+Bianca
+Catarina
+Larissa
+Maria
+Fernanda
+Amanda
+Alícia
+Carolina
+Agatha
+Gabrielly
+Quincas
+Camila
+70
+Ferreira
+Silveira
+Moreira
+Meira
+Teixeira
+Caldeira
+Pinheira
+Barreira
+Cabreira
+Costa
+Quarteira
+Parreira
+Caseira
+Roseira
+Porteira
+Monteira
+Soeira
+Mangueira
+Castanheira
+Videira
+Banheira
+Cachoeira
+Junqueira
+Siqueira
+Cerqueira
+Madeira
+Vieira
+Nogueira
+Limeira
+Figueira
+Macieira
+Carreira
+Palmeira
+Regueira
+Amoreira
+Aroeira
+Gabeira
+Ribeira
+Taveira
+Rameira
+Coqueiro
+Carvalheira
+Espinheira
+Laranjeira
+Leiria
+Casqueira
+da Bandeira
+da Silveira
+da Madureira
+da Gama
+da Fonseca
+da Fontoura
+da Nóbrega
+da Veiga
+da Maia
+da Silva
+da Costa
+da Rocha
+da Terra
+da Cruz
+da Cunha
+da Mata
+da Rosa
+da Mota
+da Paz
+da Luz
+da Conceição
+das Neves
+da Barra
+da Penha

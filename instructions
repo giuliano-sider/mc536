@@ -1,0 +1,31 @@
+postgresql instructions:
+
+psql -l -- lists all databases running in postgresql
+
+-- localhost/adminer # this is where i have ubuntu running adminer (after performing various rites of black magic with Apache)
+
+-- use \? within the psql shell to get more help
+
+-- (when running psql) \du will list the users
+
+-- \l will list all databases
+
+\connect <database> -- to start running commands on a specific database
+
+\dt -- list all the tables in the current selected database
+
+\i <sql command file> -- run this command file...
+
+\c postgres -- to connect to some other database...
+
+createdb <NOME_DO_BD> # creates a new database
+
+-- check this out
+https://www.tutorialspoint.com/postgresql/postgresql_create_database.htm
+
+postgresql runs on port 5432 by default.
+
+-- get general information with this query
+select *
+from pgadmin
+
